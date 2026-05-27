@@ -1,4 +1,9 @@
-# TechDashboard for GLPI 10.X
+# TechDashboard for GLPI
+
+![GLPI](https://img.shields.io/badge/GLPI-10.x-blue)
+![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4)
+![License](https://img.shields.io/badge/License-GPL%202.0-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
 White-label plugin for GLPI featuring operational dashboards, SLA/ISU metrics, reporting exports, service account filtering and company visual customization.
 
@@ -27,15 +32,14 @@ Compatible with **GLPI 10.x**, **PHP 8.1+** and **MariaDB/MySQL**.
 
 ## Screenshots
 
-*(coming soon)*
+Screenshots will be added soon.
 
-```text
-Dashboard
-Governance
-Branding
-Exports
-```
+Planned previews:
 
+- Dashboard
+- Governance
+- Branding
+- Report Exports
 ---
 
 ## Project Structure

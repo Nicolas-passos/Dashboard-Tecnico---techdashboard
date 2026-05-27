@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120" viewBox="0 0 360 120" role="img" aria-label="TechDashboard">
+  <rect width="360" height="120" rx="20" fill="#0f172a"/>
+  <circle cx="68" cy="60" r="28" fill="#3b82f6"/>
+  <path d="M54 62h11l8-18 10 32 8-14h15" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="122" y="55" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#ffffff">Tech</text>
+  <text x="122" y="83" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#93c5fd">Dashboard</text>
+</svg>

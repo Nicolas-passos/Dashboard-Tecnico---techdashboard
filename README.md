@@ -1,23 +1,44 @@
-# TechDashboard para GLPI
+# TechDashboard for GLPI 10.X
 
-Plugin white-label para GLPI com dashboard operacional de chamados, métricas de SLA/ISU, exportação de relatórios, ocultação de usuários de serviço e personalização visual por empresa.
+White-label plugin for GLPI featuring operational dashboards, SLA/ISU metrics, reporting exports, service account filtering and company visual customization.
 
-> Projeto preparado para GLPI 10.x, PHP 8.1+ e MariaDB/MySQL.
+Compatible with **GLPI 10.x**, **PHP 8.1+** and **MariaDB/MySQL**.
 
-## Principais recursos
+---
 
-- Dashboard de chamados com KPIs, gráficos e evolução temporal.
-- Métricas trimestrais por quarter.
-- Cálculo de contribuição anual por quarter.
-- Filtro para ocultar usuários de serviço/automações das métricas.
-- Botão para selecionar automaticamente contas cujo título seja “Conta de Serviço” ou “Contas de Serviço”.
-- Exportação em PDF e CSV compatível com Excel.
-- Rodapé de auditoria nas exportações com usuário e data/hora.
-- Layout reorganizável para a visão do usuário.
-- Cores de prioridade alinháveis com matriz de prioridade do GLPI.
-- Branding white-label: nome da empresa, título do dashboard, upload de logo e cores.
+## Features
 
-## Estrutura do projeto
+- Operational ticket dashboard with KPIs, charts and historical evolution.
+- Quarterly metrics (Quarter / Q1–Q4 model).
+- Annual contribution calculation by quarter.
+- Service / automation user exclusion from metrics.
+- Auto-selection button for accounts titled **"Service Account"** or **"Service Accounts"**.
+- PDF and CSV export (Excel compatible).
+- Export audit footer with user and timestamp.
+- User-reorganizable dashboard layout.
+- GLPI-aligned priority color mapping.
+- White-label branding:
+  - Company name
+  - Dashboard title
+  - Logo upload
+  - Custom colors
+
+---
+
+## Screenshots
+
+*(coming soon)*
+
+```text
+Dashboard
+Governance
+Branding
+Exports
+```
+
+---
+
+## Project Structure
 
 ```text
 techdashboard/
@@ -44,71 +65,114 @@ techdashboard/
 └── CHANGELOG.md
 ```
 
-## Instalação rápida
+---
+
+## Quick Installation
 
 ```bash
 cd /var/www/html/glpi/plugins
-git clone https://github.com/SUA-ORGANIZACAO/techdashboard.git
+
+git clone https://github.com/Nicolas-passos/Dashboard-Tecnico---techdashboard.git
+
 sudo chown -R www-data:www-data techdashboard
+
 sudo -u www-data php /var/www/html/glpi/bin/console cache:clear
+
 sudo systemctl restart apache2
 ```
 
-Depois acesse o GLPI como administrador:
+Then access GLPI as administrator:
 
 ```text
-Configurar → Plugins → TechDashboard → Instalar → Ativar
+Setup → Plugins → TechDashboard → Install → Enable
 ```
 
-## Branding / logo da empresa
+---
 
-O plugin não possui logo fixa de nenhuma empresa. Para adicionar a sua:
+## Branding / Company Logo
+
+The plugin does **not include fixed company branding**.
+
+To configure your own branding:
 
 ```text
-Configurar → Plugins → TechDashboard → Configurar
+Setup → Plugins → TechDashboard → Configure
 ```
 
-Configure:
+Available options:
 
-- Nome da empresa.
-- Título do dashboard.
-- Exibir logo.
-- Upload da logo.
-- Cor primária.
-- Cor secundária.
+- Company Name
+- Dashboard Title
+- Enable Logo
+- Logo Upload
+- Primary Color
+- Secondary Color
 
-Formatos aceitos: PNG, JPG, SVG e WEBP.
+Supported formats:
 
-Mais detalhes em [`docs/BRANDING.md`](docs/BRANDING.md).
+```text
+PNG
+JPG
+SVG
+WEBP
+```
 
-## Documentação
+See:
 
-- [`docs/INSTALL.md`](docs/INSTALL.md) — instalação e atualização.
-- [`docs/CONFIGURACAO.md`](docs/CONFIGURACAO.md) — configuração do plugin.
-- [`docs/BRANDING.md`](docs/BRANDING.md) — logo, nome da empresa e cores.
-- [`docs/METRICAS.md`](docs/METRICAS.md) — regras de SLA, ISU e quarters.
-- [`docs/EXPORTACAO.md`](docs/EXPORTACAO.md) — PDF, CSV e auditoria.
-- [`docs/CUSTOMIZACAO.md`](docs/CUSTOMIZACAO.md) — como adicionar gráficos e KPIs.
-- [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md) — visão técnica.
-- [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md) — problemas comuns.
-- [`docs/MANUAL_USUARIO.md`](docs/MANUAL_USUARIO.md) — manual operacional.
-- [`docs/MANUAL_ADMINISTRADOR.md`](docs/MANUAL_ADMINISTRADOR.md) — manual administrativo.
+```text
+docs/BRANDING.md
+```
 
-## Requisitos
+---
 
-- GLPI 10.0 ou superior.
-- PHP 8.1 ou superior.
-- MariaDB/MySQL.
-- Navegador moderno com JavaScript habilitado.
+## Documentation
 
-## Segurança
+| File | Description |
+|------|------|
+| docs/INSTALL.md | Installation & updates |
+| docs/CONFIGURACAO.md | Plugin configuration |
+| docs/BRANDING.md | Branding configuration |
+| docs/METRICAS.md | SLA, ISU & quarter rules |
+| docs/EXPORTACAO.md | PDF, CSV & audit exports |
+| docs/CUSTOMIZACAO.md | Adding KPIs & charts |
+| docs/ARQUITETURA.md | Technical architecture |
+| docs/TROUBLESHOOTING.md | Common issues |
+| docs/MANUAL_USUARIO.md | User manual |
+| docs/MANUAL_ADMINISTRADOR.md | Admin manual |
 
-- O plugin usa autenticação e sessão do GLPI.
-- O upload de logo aceita apenas tipos MIME de imagem permitidos.
-- Relatórios exportados incluem trilha de auditoria com usuário e data/hora.
+---
 
-Consulte [`SECURITY.md`](SECURITY.md).
+## Requirements
 
-## Licença
+- GLPI 10+
+- PHP 8.1+
+- MariaDB / MySQL
+- Modern browser with JavaScript enabled
 
-Distribuído sob licença GPL-2.0-or-later. Consulte [`LICENSE`](LICENSE).
+---
+
+## Security
+
+The plugin uses native GLPI authentication and session handling.
+
+Logo uploads accept only allowed image MIME types.
+
+Exported reports include audit trail information.
+
+See:
+
+```text
+SECURITY.md
+```
+
+---
+
+## License
+
+Distributed under **GPL-2.0-or-later**.
+
+See:
+
+```text
+LICENSE
+```

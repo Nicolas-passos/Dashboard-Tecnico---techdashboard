@@ -159,6 +159,206 @@ docs/BRANDING.md
 | docs/MANUAL_ADMINISTRADOR.md | Admin manual |
 
 ---
+# Service Accounts / Contas de Serviço
+
+## Overview
+
+TechDashboard supports filtering of **service users**, **automation accounts**, **technical users** and **system integrations** from dashboard metrics.
+
+This prevents SLA, ISU, KPIs and operational indicators from being distorted by bots, APIs, scheduled jobs and non-human accounts.
+
+---
+
+## Information Sources
+
+The plugin retrieves service-account information directly from native GLPI data.
+
+Main sources:
+
+```text
+glpi_users
+glpi_usertitles
+glpi_profiles_users
+```
+
+Depending on the GLPI configuration.
+
+---
+
+## Detection Methods
+
+### 1. Manual User Selection
+
+Administrators can manually choose which accounts should be excluded from metrics.
+
+Path:
+
+```text
+Setup → Plugins → TechDashboard → Hide Users
+```
+
+Users selected here will not be considered in dashboard calculations.
+
+---
+
+### 2. Automatic Title Detection
+
+TechDashboard includes an automatic helper button that searches users by **GLPI User Title**.
+
+Supported title matching:
+
+```text
+Service Account
+Service Accounts
+Conta de Serviço
+Contas de Serviço
+```
+
+Matching users can be automatically selected for exclusion.
+
+---
+
+## Recommended Configuration
+
+Recommended best practice:
+
+Create a dedicated **User Title** inside GLPI for technical accounts.
+
+Examples:
+
+```text
+Service Account
+Conta de Serviço
+```
+
+Then assign this title to:
+
+- API integrations
+- automation users
+- bots
+- monitoring accounts
+- scheduled jobs
+- cron users
+- background processes
+- system connectors
+
+---
+
+## Creating a Service Account Title in GLPI
+
+Path:
+
+```text
+Administration → Dropdowns → User Titles
+```
+
+Create a new title:
+
+```text
+Service Account
+```
+
+or
+
+```text
+Conta de Serviço
+```
+
+Save.
+
+---
+
+## Assigning the Title to Users
+
+Path:
+
+```text
+Administration → Users
+```
+
+Open the target account.
+
+Locate the field:
+
+```text
+Title
+```
+
+Assign:
+
+```text
+Service Account
+```
+
+Save.
+
+---
+
+## Using Automatic Selection in TechDashboard
+
+After configuring GLPI titles:
+
+Open:
+
+```text
+TechDashboard → Hide Users
+```
+
+Click:
+
+```text
+Auto Select Service Accounts
+```
+
+The plugin will automatically search for matching accounts and pre-select them.
+
+---
+
+## Example Accounts
+
+Typical accounts frequently excluded from metrics:
+
+```text
+zabbix
+n8n
+api_integracao
+automation_user
+monitoring_bot
+backup_runner
+glpi_cron
+service_connector
+system_bot
+```
+
+---
+
+## Best Practices
+
+Recommended operational practices:
+
+✓ separate human users from technical users.
+
+✓ maintain a dedicated title for service accounts.
+
+✓ periodically review excluded users.
+
+✓ document automation accounts internally.
+
+✓ avoid using administrator accounts for integrations.
+
+---
+
+## Why Filter Service Accounts?
+
+Without filtering, dashboards may present distorted indicators such as:
+
+- artificial ticket volumes
+- inaccurate SLA measurements
+- misleading ISU results
+- incorrect technician statistics
+- inflated operational KPIs
+
+Filtering improves reporting reliability and governance quality.
 
 ## Requirements
 

@@ -32,15 +32,29 @@ Compatible with **GLPI 10.x**, **PHP 8.1+** and **MariaDB/MySQL**.
 
 ## Screenshots
 
-Screenshots will be added soon.
+### Dashboard Overview
 
-Planned previews:
+![Dashboard](./screenshots/dashboard-main.png)
 
-- Dashboard
-- Governance
-- Branding
-- Report Exports
----
+### Dashboard — Extended View
+
+![Dashboard Extended](./screenshots/dashboard-main2.png)
+
+### Governance
+
+![Governance](./screenshots/governance.png)
+
+### Branding Configuration
+
+![Branding](./screenshots/branding.png)
+
+### Report Export
+
+![Export](./screenshots/exportacao.png)
+
+### PDF Export Example
+
+![PDF Export](./screenshots/exportacao_for_pdf.png)
 
 ## Project Structure
 
